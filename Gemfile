@@ -5,6 +5,7 @@ gem 'rails', '4.2.7'
 gem 'rails-api'
 gem 'puma'
 gem 'mongoid', '~> 5.1.0'
+gem 'active_model_serializers', '~> 0.10.0'
 gem 'dotenv-rails'
 
 group :development do
