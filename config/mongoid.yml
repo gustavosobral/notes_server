@@ -1,0 +1,13 @@
+development:
+  clients:
+    default:
+      database: notes_server_development
+      hosts:
+        - <%= ENV['MONGODB_HOST'] || 'localhost:27017' %>
+
+test:
+  clients:
+    default:
+      database: notes_server_test
+      hosts:
+        - <%= ENV['MONGODB_HOST'] || 'localhost:27017' %>
