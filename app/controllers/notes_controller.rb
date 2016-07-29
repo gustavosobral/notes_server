@@ -2,21 +2,18 @@ class NotesController < ApplicationController
   before_action :set_note, only: [:show, :update, :destroy]
 
   # GET /notes
-  # GET /notes.json
   def index
-    @notes = Note.all
+    @notes = params.has_key?(:q) && !params[:q].blank? ? search_by_query(params[:q]) : Note.all
 
     render json: @notes
   end
 
   # GET /notes/1
-  # GET /notes/1.json
   def show
     render json: @note
   end
 
   # POST /notes
-  # POST /notes.json
   def create
     @note = Note.new(note_params)
 
@@ -28,7 +25,6 @@ class NotesController < ApplicationController
   end
 
   # PATCH/PUT /notes/1
-  # PATCH/PUT /notes/1.json
   def update
     if @note.update(note_params)
       head :no_content
@@ -38,7 +34,6 @@ class NotesController < ApplicationController
   end
 
   # DELETE /notes/1
-  # DELETE /notes/1.json
   def destroy
     @note.destroy
 
@@ -53,5 +48,9 @@ class NotesController < ApplicationController
 
     def note_params
       params.require(:note).permit(:body, :first_seen)
+    end
+
+    def search_by_query(query)
+      Note.search(query).records
     end
 end

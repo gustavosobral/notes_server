@@ -7,6 +7,8 @@ gem 'puma'
 gem 'mongoid', '~> 5.1.0'
 gem 'active_model_serializers', '~> 0.10.0'
 gem 'dotenv-rails'
+gem 'elasticsearch-model'
+gem 'elasticsearch-rails'
 
 group :development, :test do
   gem 'factory_girl_rails'
