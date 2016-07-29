@@ -1,28 +1,22 @@
-== README
+# Notes App web server
+An application web server built using Ruby on Rails 4.2 to serve a RESTFul JSON API for Notes application.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Running
+First, install the project dependencies with Bundler:
 
-Things you may want to cover:
+```
+$ bundle install --without production
+```
 
-* Ruby version
+Then, run the test suite to verify that everything is working correctly:
 
-* System dependencies
+```
+$ rake test
+```
 
-* Configuration
+## ToDo's:
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+* Add full-text search feature with ElasticSearch
+* Configure Procfile to start the app
+* Deploy application on production
+* Configure a CI server to run test suite
