@@ -18,5 +18,6 @@ group :development do
 end
 
 group :test do
+  gem 'database_cleaner'
   gem 'minitest-reporters'
 end
