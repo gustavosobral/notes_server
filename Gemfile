@@ -8,7 +8,15 @@ gem 'mongoid', '~> 5.1.0'
 gem 'active_model_serializers', '~> 0.10.0'
 gem 'dotenv-rails'
 
-group :development do
+group :development, :test do
+  gem 'factory_girl_rails'
   gem 'byebug'
+end
+
+group :development do
   gem 'spring'
+end
+
+group :test do
+  gem 'minitest-reporters'
 end
