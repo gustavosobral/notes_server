@@ -39,6 +39,7 @@ GEM
     arel (6.0.3)
     bson (4.1.1)
     builder (3.2.2)
+    byebug (9.0.5)
     concurrent-ruby (1.0.2)
     dotenv (2.1.1)
     dotenv-rails (2.1.1)
@@ -119,6 +120,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  byebug
   dotenv-rails
   mongoid (~> 5.1.0)
   puma

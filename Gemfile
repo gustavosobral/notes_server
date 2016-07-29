@@ -7,4 +7,7 @@ gem 'puma'
 gem 'mongoid', '~> 5.1.0'
 gem 'dotenv-rails'
 
-gem 'spring', :group => :development
+group :development do
+  gem 'byebug'
+  gem 'spring'
+end
