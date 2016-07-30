@@ -16,7 +16,4 @@ $ rake test
 
 ## ToDo's:
 
-* Add full-text search feature with ElasticSearch
-* Configure Procfile to start the app
-* Deploy application on production
 * Configure a CI server to run test suite

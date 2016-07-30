@@ -17,6 +17,7 @@ end
 
 group :development do
   gem 'spring'
+  gem 'foreman'
 end
 
 group :test do
