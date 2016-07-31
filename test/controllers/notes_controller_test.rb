@@ -16,6 +16,7 @@ class NotesControllerTest < ActionDispatch::IntegrationTest
     assert_difference 'Note.count', 1 do
       post notes_url, note: { title: 'My note',
                               body: 'Body content!',
+                              status: 'draft',
                               first_seen: '2016-06-20T20:25:43.Z' }
     end
     assert_response :created
@@ -27,6 +28,7 @@ class NotesControllerTest < ActionDispatch::IntegrationTest
     assert_equal @note.id.to_s, json_response['id']
     assert_equal @note.title, json_response['title']
     assert_equal @note.body, json_response['body']
+    assert_equal @note.status, json_response['status']
   end
 
   test 'should update note' do

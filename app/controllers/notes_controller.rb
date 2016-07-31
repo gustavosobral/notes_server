@@ -47,7 +47,7 @@ class NotesController < ApplicationController
     end
 
     def note_params
-      params.require(:note).permit(:title, :body, :first_seen)
+      params.require(:note).permit(:title, :body, :status, :first_seen)
     end
 
     def search_by_query(query)
