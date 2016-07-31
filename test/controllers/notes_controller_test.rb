@@ -29,6 +29,7 @@ class NotesControllerTest < ActionDispatch::IntegrationTest
     assert_equal @note.title, json_response['title']
     assert_equal @note.body, json_response['body']
     assert_equal @note.status, json_response['status']
+    assert_not_nil json_response['first_seen']
   end
 
   test 'should update note' do
@@ -37,6 +38,21 @@ class NotesControllerTest < ActionDispatch::IntegrationTest
     put note_url(@note), note: { body: 'Body content updated!' }
     get note_url(@note)
     assert_equal 'Body content updated!', json_response['body']
+  end
+
+  test 'should set first_seen' do
+    @note = create(:note, first_seen: '')
+    get note_url(@note)
+    assert_nil json_response['first_seen']
+    put note_url(@note), note: { first_seen: 1.month.ago }
+    get note_url(@note)
+    assert_not_nil json_response['first_seen']
+  end
+
+  test 'should note update first_seen' do
+    put note_url(@note), note: { first_seen: 1.month.ago }
+    assert_equal ["can't be updated"], json_response['first_seen']
+    assert_response :unprocessable_entity
   end
 
   test 'should destroy note' do
