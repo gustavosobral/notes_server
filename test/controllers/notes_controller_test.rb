@@ -29,6 +29,7 @@ class NotesControllerTest < ActionDispatch::IntegrationTest
     assert_equal @note.title, json_response['title']
     assert_equal @note.body, json_response['body']
     assert_equal @note.status, json_response['status']
+    assert_equal 1, json_response['view_counter']
     assert_not_nil json_response['first_seen']
   end
 
@@ -53,6 +54,12 @@ class NotesControllerTest < ActionDispatch::IntegrationTest
     put note_url(@note), note: { first_seen: 1.month.ago }
     assert_equal ["can't be updated"], json_response['first_seen']
     assert_response :unprocessable_entity
+  end
+
+  test 'should increase view_counter' do
+    get note_url(@note)
+    get note_url(@note)
+    assert_equal 2, json_response['view_counter']
   end
 
   test 'should destroy note' do
