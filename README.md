@@ -23,4 +23,6 @@ $ rake test
 
 ## ToDo's:
 
-* 
+* Allow user authentication
+* API namespacing
+* Add swagger for documentation
