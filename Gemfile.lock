@@ -112,6 +112,7 @@ GEM
     pkg-config (1.1.7)
     puma (3.6.0)
     rack (1.6.4)
+    rack-cors (0.4.0)
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (4.2.7)
@@ -171,6 +172,7 @@ DEPENDENCIES
   minitest-reporters
   mongoid (~> 5.1.0)
   puma
+  rack-cors
   rails (= 4.2.7)
   rails-api
   spring

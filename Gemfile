@@ -9,6 +9,7 @@ gem 'active_model_serializers', '~> 0.10.0'
 gem 'dotenv-rails'
 gem 'elasticsearch-model'
 gem 'elasticsearch-rails'
+gem 'rack-cors', :require => 'rack/cors'
 
 group :development, :test do
   gem 'factory_girl_rails'
