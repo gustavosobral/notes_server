@@ -10,7 +10,7 @@ class NotesController < ApplicationController
 
   # GET /notes/1
   def show
-    @note.view_counter += 1
+    @note.views += 1
     @note.save
 
     render json: @note

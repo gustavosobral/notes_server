@@ -7,7 +7,7 @@ class Note
   field :body
   field :status
   field :first_seen, type: DateTime
-  field :view_counter, type: Integer
+  field :views, type: Integer
 
   validates :title, presence: true, length: { maximum: 80 }
   validates :body, presence: true
@@ -16,7 +16,7 @@ class Note
 
   def initialize(attrs = nil)
     super(attrs)
-    self.view_counter = 0
+    self.views = 0
   end
 
   def as_indexed_json(_ = {})

@@ -29,7 +29,7 @@ class NotesControllerTest < ActionDispatch::IntegrationTest
     assert_equal @note.title, json_response['title']
     assert_equal @note.body, json_response['body']
     assert_equal @note.status, json_response['status']
-    assert_equal 1, json_response['view_counter']
+    assert_equal 1, json_response['views']
     assert_not_nil json_response['first_seen']
   end
 
@@ -59,7 +59,7 @@ class NotesControllerTest < ActionDispatch::IntegrationTest
   test 'should increase view_counter' do
     get note_url(@note)
     get note_url(@note)
-    assert_equal 2, json_response['view_counter']
+    assert_equal 2, json_response['views']
   end
 
   test 'should destroy note' do
