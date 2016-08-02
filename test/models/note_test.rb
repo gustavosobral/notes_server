@@ -26,7 +26,7 @@ class NoteTest < ActiveSupport::TestCase
     assert_not note.valid?
   end
 
-  test 'should not permit invalid body' do
+  test 'should not permit invalid status' do
     note = build(:note, status: 'unused')
     assert_not note.valid?
   end
