@@ -34,7 +34,10 @@ module NotesServer
     config.middleware.insert_before(0, "Rack::Cors", logger: (-> { Rails.logger })) do
       allow do
         origins '*'
-        resource '*', headers: :any, methods: [:get, :post, :put, :patch, :delete]
+        resource '*',
+                 headers: :any,
+                 methods: [:get, :post, :put, :patch, :delete],
+                 expose:  ['Total', 'Per-Page']
       end
     end
   end
