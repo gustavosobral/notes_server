@@ -1,3 +1,9 @@
 Rails.application.routes.draw do
-  resources :notes, except: [:new, :edit]
+  namespace :api do
+    namespace :v1 do
+      root 'notes#index'
+
+      resources :notes, except: [:new, :edit]
+    end
+  end
 end
