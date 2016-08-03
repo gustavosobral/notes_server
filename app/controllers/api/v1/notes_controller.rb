@@ -5,7 +5,7 @@ class Api::V1::NotesController < ApplicationController
   def index
     @notes = params.has_key?(:q) && !params[:q].blank? ? search_by_query(params[:q]) : Note.all
 
-    render json: @notes
+    paginate json: @notes
   end
 
   # GET /notes/1
