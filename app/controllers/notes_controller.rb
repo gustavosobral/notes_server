@@ -11,6 +11,7 @@ class NotesController < ApplicationController
   # GET /notes/1
   def show
     @note.views += 1
+    @note.first_seen ||= Time.now
     @note.save
 
     render json: @note
@@ -50,7 +51,7 @@ class NotesController < ApplicationController
     end
 
     def note_params
-      params.require(:note).permit(:title, :body, :status, :first_seen)
+      params.require(:note).permit(:title, :body, :status)
     end
 
     def search_by_query(query)
