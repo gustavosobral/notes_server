@@ -10,6 +10,8 @@ gem 'dotenv-rails'
 gem 'elasticsearch-model'
 gem 'elasticsearch-rails'
 gem 'rack-cors', :require => 'rack/cors'
+gem 'kaminari-mongoid'
+gem 'api-pagination'
 
 group :development, :test do
   gem 'factory_girl_rails'
