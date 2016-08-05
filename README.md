@@ -23,5 +23,7 @@ $ rake test
 
 ## ToDo's:
 
-* Allow user authentication
 * Add swagger for documentation
+* Allow user authentication
+* Verify security key points (CSRF, HTTPS)
+* Whitelist the front-end (SPA)
