@@ -3,7 +3,7 @@
 
 [![Build Status](https://travis-ci.org/gustavosobral/notes_server.svg?branch=master)](https://travis-ci.org/gustavosobral/notes_server)
 
-An application web server built using Ruby on Rails 4.2 to serve a RESTFul JSON API for Notes application. Check the application who is consuming this API here: [Notes App](https://github.com/fernandobrito/ufpb_sigaa_api_old)
+An application web server built using Ruby on Rails 4.2 to serve a RESTFul JSON API for Notes application. Check the application who is consuming this API here: [Notes App](https://github.com/gustavosobral/notes_app)
 
 ## Dependencies
 The project needs to a MongoDB database and Elasticsearch search engine installed.
